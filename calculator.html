@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        height: 100vx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .calculator{
+        background-color: aliceblue;
+        padding: 15px;
+        border-radius: 30px;
+        box-shadow: inset 5px 5px 12px red,
+        5px 5px 12px blue;
+        display: grid;
+        grid-template-columns: repeat(4,80px);
+    }
+    input{
+        grid-column: span 4;
+        height: 70px;
+        width: 320px;
+        background-color: #ecf0f3;
+        box-shadow: inset 5px 5px 12px white,
+        5px 5px 12px blue;
+        border-radius:30px;
+        border:none;
+        color:black;
+        font-size: 50px;
+        text-align: end;
+        margin: auto;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+    button{
+        height: 48px;
+        width: 48px;
+        background-color: #ecf0f3;
+        box-shadow: -5px -5px 12px red,
+        5px 5px 12px blue;
+        border: none;
+        border-radius: 50px;
+        margin: 8px;
+        font-size: 16px;
+        font-weight: bold;
+
+    }
+button:hover{
+    color:red;
+    font-size: 25px;
+}
+    .equal{
+        width: 140px;
+        border: 40px;
+        background-color: aliceblue;
+    }
+</style>
+<body>
+    <div class ="container">
+        <div class=" calculator">
+          <input type="text" placeholder="0" id="output">
+          <button onclick="delelte()">del</button>
+          <button onclick="clr()">clr</button>
+          <button onclick="dispaly('%')">%</button>
+          <button onclick="dispaly('*')">*</button>
+          <button onclick="dispaly('1')">1</button>
+          <button onclick="dispaly('2')">2</button>
+          <button onclick="dispaly('3')">3</button>
+          <button onclick="dispaly('+')">+</button>
+          <button onclick="dispaly('4')">4</button>
+          <button onclick="dispaly('5')">5 </button>
+          <button onclick="dispaly('6')">6</button>
+          <button onclick="dispaly('-')">-</button>
+          <button onclick="dispaly('7')">7</button>
+          <button onclick="dispaly('8')">8</button>
+          <button onclick="dispaly('9')">9</button>
+          <button onclick="dispaly('/')">/</button>
+          <button onclick="dispaly('0')">0</button>
+          <button onclick="dispaly('.')">.</button>
+          <button onclick="calculator() "class="equal">=</button>
+
+        </div>
+    </div>
+
+<script>
+let outputscreeen= document.getElementById("output");
+function dispaly(num){
+    outputscreeen.value +=num;
+}
+function calculator(){
+try{
+    outputscreeen.value=eval(outputscreeen.value);
+
+}
+catch(err)
+{
+alert("invalid");
+}}
+function clr(){
+    outputscreeen.value=""
+}
+function delelte(){
+    outputscreeen.value=outputscreeen.value.slice(0,-1)
+}
+</script>
+</body>
+</html>
